@@ -1,7 +1,6 @@
-var connectionFactory = require('../infra/connectionFactory');
 module.exports = function(app){
     app.get('/motoristas',function(req,res){
-/*    var connection = connectionFactory();
+/*    var connection = app.infra.connectionFactory();
       connection.query('select * from motorista',function(err,results){
           //mostra JSON
           //res.send(results);
