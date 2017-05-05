@@ -16,8 +16,8 @@
 // [START app]
 'use strict';
 
-const express = require('express');
-const app = express();
+const app = require('./config/express')();
+var rotasMotoristas = require('./app/routes/motoristas')(app);
 
 app.get('/', (req, res) => {
   res.status(200).send('Backend +Way :)');
