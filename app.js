@@ -16,9 +16,10 @@
 // [START app]
 'use strict';
 
+//carregando express editado para receber outros modulos
 const app = require('./config/express')();
-var rotasMotoristas = require('./app/routes/motoristas')(app);
 
+//rota de teste - home
 app.get('/', (req, res) => {
   res.status(200).send('Backend +Way :)');
 });
