@@ -1,12 +1,18 @@
+//motoristasController
 module.exports = function(app){
 
     //rota para acessar a pagina de lista / receber JSON com os motoistas
-    app.get('/motoristas',function(req,res){
+    app.get('/motoristas',function(req,res, next){
     //instanciando os objetos de conexao
     var connection = app.infra.connectionFactory();
     var motoristasDAO = new app.infra.MotoristasDAO(connection);
 
       motoristasDAO.lista(function(err,results){
+
+        if(err){
+          return next(err);
+        }
+
         //metodo format do response permiti definir o tipo de retorno
         //de acordo com a solicitação enviada
         res.format({
