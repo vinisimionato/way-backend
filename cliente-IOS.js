@@ -2,8 +2,8 @@ var http = require('http');
 
 var configuracoes = {
     hostname: 'localhost',
-    port: 8080,
-    path: '/motoristas',
+    port: 3000,
+    path: '/login',
     headers: {
         'Accept': 'application/json'
     }

@@ -13,6 +13,7 @@ var express = require('express');
 var load = require('express-load');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var morgan = require('morgan');
 
 module.exports = function() {
     var app = express();
@@ -26,7 +27,7 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     app.use(expressValidator());
-
+    app.use(morgan('dev'))
     //carrega os modulos automaticamente para o server
     load('routes', {cwd: 'app'})
         .then('infra')

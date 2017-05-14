@@ -3,7 +3,7 @@ function MotoristasDAO(connection){
 }
 
 MotoristasDAO.prototype.lista = function(callback){
-  this._connection.query('select * from motorista', callback);
+  this._connection.query('select * from usuarios', callback);
 }
 
 MotoristasDAO.prototype.salva = function(motorista,callback){
