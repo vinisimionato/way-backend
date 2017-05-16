@@ -13,15 +13,10 @@
   },
   "dependencies": {
     "body-parser": "^1.17.1",
-    "connect-flash": "^0.1.1",
-    "ejs": "^2.5.6",
-    "express": "4.14.1",
-    "express-load": "^1.1.15",
-    "express-session": "^1.15.2",
+    "consign": "^0.1.4",
+    "express": "^4.15.2",
     "express-validator": "^3.2.0",
-    "morgan": "^1.8.1",
-    "mysql": "^2.13.0",
-    "passport": "^0.3.2"
+    "mysql": "^2.13.0"
   },
   "devDependencies": {
     "mocha": "^3.3.0",
