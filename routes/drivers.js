@@ -8,6 +8,8 @@ module.exports = function(app) {
      //driver.insertDate = new Date;
      driverDAO.list(function(exception, result){
        if(exception){
+         console.log("Error");
+         console.log(exception);
          return next(exception);
        }
        console.log(result);
