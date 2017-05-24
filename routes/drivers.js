@@ -34,7 +34,7 @@ module.exports = function(app) {
        if (errors){
           console.log("Found validation errors");
           console.log(errors[0]);
-          res.status(500).send(errors[0]);
+          res.status(400).send(errors[0]);
           return;
       }
 
