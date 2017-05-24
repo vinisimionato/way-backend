@@ -41,7 +41,8 @@ module.exports = function(app) {
       var connection = app.persistence.connectionFactory();
       var driverDAO = new app.persistence.DriverDAO(connection);
 
-      driver.status = 'Waiting confirmation';
+      //driver.status = 'Waiting confirmation';
+      driver.status = 'Driver confirmed';
       driver.insertDate = new Date;
 
       driverDAO.insert(driver, function(exception, result){
