@@ -22,7 +22,7 @@ describe('Route: /drivers',function(){
         "password":"321456",
         "confirmPassword":"321456",
         "cnh":"43556443",
-        "phone":"21223443231"
+        "phone"":21223443231"
 	};
 
 	it('#Register new Driver with valid data',function(done){

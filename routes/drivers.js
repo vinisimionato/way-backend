@@ -55,6 +55,32 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/login", function(req, res, next){
+    req.assert("name", "Name is required.").notEmpty();
+    req.assert("password", "Password is required.").notEmpty();
+
+    var errors = req.validationErrors();
+
+    if (errors){
+        console.log("Found validation errors");
+        console.log(errors[0]);
+        res.status(400).send(errors[0]);
+        return;
+    }
+
+    var connection = app.persistence.connectionFactory();
+    var driverDAO = new app.persistence.DriverDAO(connection);
+
+    driverDAO.login(driver, function(exception, result){
+      if(exception){
+        return next(exception);
+      }
+      console.log('Logged Successfully: ' + JSON.stringify(result));
+      res.status(200).json(driver);
+    });
+
+  });
+
   app.put('/drivers/register/:id', function(req, res, next){
     var driver = {};
     var id =req.params.id;
