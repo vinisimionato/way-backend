@@ -56,6 +56,8 @@ module.exports = function(app) {
   });
 
   app.post("/login", function(req, res, next){
+    var driver = req.body;
+    
     req.assert("name", "Name is required.").notEmpty();
     req.assert("password", "Password is required.").notEmpty();
 
