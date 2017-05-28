@@ -57,7 +57,7 @@ module.exports = function(app) {
 
   app.post("/login", function(req, res, next){
     var driver = req.body;
-    
+
     req.assert("name", "Name is required.").notEmpty();
     req.assert("password", "Password is required.").notEmpty();
 
@@ -77,8 +77,13 @@ module.exports = function(app) {
       if(exception){
         return next(exception);
       }
+
+      if(result[0] == null){
+        res.status(401).send(result[0]);
+      }
+
       console.log('Logged Successfully: ' + JSON.stringify(result));
-      res.status(200).json(driver);
+      res.status(200).json(result[0]);
     });
 
   });
