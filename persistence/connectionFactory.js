@@ -10,6 +10,8 @@ function createDBConnection(){
     database: 'moreway_db'
   };
 
+  console.log(config['INSTANCE_CONNECTION_NAME']);
+
   if (config['INSTANCE_CONNECTION_NAME'] && process.env.NODE_ENV === 'production') {
     options.socketPath = `/cloudsql/${config['INSTANCE_CONNECTION_NAME']}`;
     console.log(options);

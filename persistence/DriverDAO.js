@@ -25,8 +25,8 @@ function DriverDAO(connection) {
 
  DriverDAO.prototype.login = function (driver, callback){
  	console.log(driver);
- 	this._connection.query("select * from drivers where name = ? and password = ?"
- 		, [driver.name, driver.password], callback);
+ 	this._connection.query("select * from drivers where email = ? and password = ?"
+ 		, [driver.email, driver.password], callback);
  }
 
 
